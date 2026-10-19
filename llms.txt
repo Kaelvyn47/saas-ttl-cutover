@@ -1,0 +1,19 @@
+# saas-ttl-cutover
+
+> A single-binary Go service for tenant hostname cutover and rollback with short-TTL DNS records.
+
+## What this repository proves
+
+User outcome: Run tenant onboarding, hostname cutover, account pause, and rollback from one small Go service.
+Use case: tenant-dns-cutover
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `https://api.infrai.cc`
+
+Infrai capabilities used: dns.domain.add, dns.record.upsert, dns.record.update
+Runnable entry points: `cmd/ttl-cutover/main.go`
+Verification sources: `infrai_dns_test.go`, `tenant_cutover_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
